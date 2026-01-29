@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 놀이터 회원 모집</title>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+        :root {
+            --accent-color: #00f2ff; /* 더 밝은 형광 블루 */
+            --bg-gradient: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        }
+
+        body {
+            font-family: 'Pretendard', sans-serif;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--bg-gradient);
+            overflow: hidden;
+        }
+
+        /* 배경 애니메이션 오브젝트 */
+        .orb {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(0, 242, 255, 0.2) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            z-index: 0;
+            animation: move 15s infinite alternate;
+        }
+
+        @keyframes move {
+            from { transform: translate(-10%, -10%); }
+            to { transform: translate(10%, 10%); }
+        }
+
+        /* 글래스모피즘 메인 카드 */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 40px;
+            padding: 60px 40px;
+            width: 85%;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            z-index: 10;
+        }
+
+        /* 3초 간격 제자리 찾기 애니메이션 */
+        .ani-item {
+            opacity: 0;
+            transform: translateY(40px);
+            filter: blur(5px);
+            animation: arrive 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        @keyframes arrive {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                filter: blur(0);
+            }
+        }
+
+        .ani-1 { animation-delay: 0.2s; }
+        .ani-2 { animation-delay: 0.7s; }
+        .ani-3 { animation-delay: 1.2s; }
+        .ani-4 { animation-delay: 1.7s; }
+        .ani-5 { animation-delay: 2.2s; }
+
+        .badge {
+            color: var(--accent-color);
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            color: #ffffff;
+            margin: 15px 0;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .desc {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.15rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        /* 정보 리스트 */
+        .info-list {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            padding: 25px;
+            margin-bottom: 35px;
+            text-align: left;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .info-list div {
+            color: white;
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
+
+        /* 가장 중요한 가입 안내 박스 - 시인성 극대화 */
+        .contact-box {
+            background: #ffffff; /* 흰색 배경으로 확실하게 보이게 수정 */
+            padding: 20px;
+            border-radius: 20px;
+            color: #1a2a6c; /* 진한 남색 글씨 */
+            font-size: 1.2rem;
+            font-weight: 800;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            line-height: 1.5;
+        }
+
+        .contact-box b {
+            color: #ff4b2b; /* 박광민 선임님 이름 강조색 */
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="orb"></div>
+
+    <div class="glass-card">
+        <div class="ani-item ani-1">
+            <span class="badge">GGSC AI CLUB</span>
+        </div>
+        
+        <div class="ani-item ani-2">
+            <h1>AI 놀이터</h1>
+        </div>
+
+        <div class="ani-item ani-3">
+            <p class="desc">어려운 공부는 NO! <br> <b>경기도체육회 직원</b>이라면 <br> 누구나 즐기는 AI 체험 공간</p>
+        </div>
+
+        <div class="ani-item ani-4">
+            <div class="info-list">
+                <div>🚀 <b>대상:</b> 경기도체육회 직원 누구나</div>
+                <div>🎨 <b>활동:</b> AI 이미지, 영상, 자동화 체험</div>
+                <div>💡 <b>목표:</b> 기술과 친해지며 놀아보기</div>
+            </div>
+        </div>
+
+        <div class="ani-item ani-5">
+            <div class="contact-box">
+                가입은 <b>체육복지팀 박광민 선임</b>에게<br>지금 바로 알려주세요! :)
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
